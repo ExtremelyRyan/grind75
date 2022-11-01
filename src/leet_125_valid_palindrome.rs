@@ -5,17 +5,17 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 */
 
 pub fn is_palindrome(s: String) -> bool {
-    if s.len() == 0 {
-        return true;
-    }
-
     // convert to lowercase
     // remove all non-alphanumeric
-    // check if same backwards and forwards
-    
+    let forward: String = s.to_lowercase()
+    .chars()
+    .filter(|ch| ch.is_alphanumeric())
+    .collect();
 
+    // reverse string and compare
+    let backward: String = forward.chars().rev().collect();
 
-    false
+    forward == backward
 }
 
 #[cfg(test)]
