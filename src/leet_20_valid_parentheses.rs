@@ -1,6 +1,5 @@
-
 /*
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', 
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 determine if the input string is valid.
 
 An input string is valid if:
@@ -31,11 +30,9 @@ pub fn is_valid(s: String) -> bool {
             }
             _ => return false,
         }
-        
     }
     // our stack should be empty here.
     stack.len() == 0
-
 }
 
 #[cfg(test)]
@@ -44,19 +41,18 @@ mod test {
 
     #[test]
     fn empty_string() {
-        assert!( is_valid("".to_string()));
+        assert!(is_valid("".to_string()));
     }
     #[test]
     fn example1() {
-        assert!( is_valid("()".to_string()));
+        assert!(is_valid("()".to_string()));
     }
     #[test]
     fn example2() {
-        assert!( is_valid("()[]{}".to_string()));
+        assert!(is_valid("()[]{}".to_string()));
     }
     #[test]
     fn example3() {
-        assert!( !is_valid("(]".to_string()));
+        assert!(!is_valid("(]".to_string()));
     }
-
 }
