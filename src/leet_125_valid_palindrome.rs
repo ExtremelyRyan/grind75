@@ -7,10 +7,11 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 pub fn is_palindrome(s: String) -> bool {
     // convert to lowercase
     // remove all non-alphanumeric
-    let forward: String = s.to_lowercase()
-    .chars()
-    .filter(|ch| ch.is_alphanumeric())
-    .collect();
+    let forward: String = s
+        .to_lowercase()
+        .chars()
+        .filter(|ch| ch.is_alphanumeric())
+        .collect();
 
     // reverse string and compare
     let backward: String = forward.chars().rev().collect();
@@ -34,6 +35,6 @@ mod test {
 
     #[test]
     fn example3() {
-        assert!(!is_palindrome(" ".to_string()));
+        assert!(is_palindrome(" ".to_string()));
     }
 }
