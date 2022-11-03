@@ -4,11 +4,14 @@ pub fn merge_two_lists(
     list1: Option<Box<ListNode>>,
     list2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {
-
-   // if one list is empty - just return the already sorted
-   // other list.
-   if list1.is_none() { return list2;}
-   if list2.is_none() { return list1;}
+    // if one list is empty - just return the already sorted
+    // other list.
+    if list1.is_none() {
+        return list2;
+    }
+    if list2.is_none() {
+        return list1;
+    }
 
     let mut l1 = list1;
     let mut l2 = list2;
@@ -16,14 +19,13 @@ pub fn merge_two_lists(
     let mut vec_result = Vec::new();
 
     while l1.is_some() && l2.is_some() {
-        
         let l1ref = l1.as_ref().unwrap().val;
         let l2ref = l2.as_ref().unwrap().val;
-        
+
         if l1ref < l2ref {
             vec_result.push(l1ref);
             l1 = l1.unwrap().next;
-        }else {
+        } else {
             vec_result.push(l2ref);
             l2 = l2.unwrap().next;
         }
@@ -40,7 +42,6 @@ pub fn merge_two_lists(
     }
 
     ListNode::from_vec(&vec_result)
- 
 }
 
 #[cfg(test)]
@@ -75,8 +76,7 @@ mod test {
     fn ex3() {
         let list = ListNode::from_vec(&vec![0]);
         let merged = merge_two_lists(None, list);
-        assert_eq!(merged.as_ref().unwrap().val , 0);
+        assert_eq!(merged.as_ref().unwrap().val, 0);
         assert!(merged.unwrap().next.is_none());
     }
-
 }
