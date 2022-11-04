@@ -12,21 +12,32 @@ pub fn add_two_numbers(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {
-let mut l1_ref = l1.clone();
-let mut l2_ref = l2.clone();
+    let mut l1_ref = l1;
+    let mut l2_ref = l2;
 
     let mut l1_vec: Vec<i32> = Vec::new();
     let mut l2_vec: Vec<i32> = Vec::new();
 
-    for value in l1_ref {
-        l1_vec.push(value.val);
-        l1_ref = l1.as_ref().unwrap().next;
+    let mut num1 = 0;
+    let mut num2 = 0;
+
+    let mut sum = 
+
+    while l1_ref.is_some() { 
+        l1_vec.push(l1_ref.as_ref().unwrap().val);
+        l1_ref = l1_ref.unwrap().next;
     }
-    l2_ref.into_iter().for_each(|value| {
-        l2_vec.push(value.val); 
-    });
+    while l2_ref.is_some() { 
+        l2_vec.push(l2_ref.as_ref().unwrap().val);
+        l2_ref = l2_ref.unwrap().next;
+    }
+
+    //debugging
     println!("list1: {l1_vec:?}");
     println!("list2: {l2_vec:?}");
+
+    
+
 
     None
 }
