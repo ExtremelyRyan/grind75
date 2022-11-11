@@ -8,9 +8,29 @@ If you cannot achieve any profit, return 0.
 */
 
 pub fn max_profit(prices: Vec<i32>) -> i32 {
+    // let mut max = 0;
+    // for i in 0..prices.len() - 1 {
+    //     for j in i + 1..prices.len() {
+    //         max = max.max(prices[j] - prices[i]);
+    //     }
+    // }
+    // max
+    if prices.len() < 2 { return 0;}
     
+    // get first max by comparing delta between first two
+    let mut max: i32 = 0.max(prices[1] - prices[0]);
 
-    0
+    // set inital min value
+    let mut min: i32 = prices[0];
+    println!("start: max: {max}, min{min}");
+
+    (1..prices.len()).for_each(|i| {
+        max = max.max(prices[i] - min);
+        min = min.min(prices[i]);
+        //println!("debug: max: {max}, min{min}");
+    });
+    max
+
 }
 
 #[cfg(test)]
