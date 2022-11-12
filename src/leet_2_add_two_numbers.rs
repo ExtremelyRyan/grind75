@@ -18,8 +18,8 @@ pub fn add_two_numbers(
     let mut l1_vec: Vec<i32> = Vec::new();
     let mut l2_vec: Vec<i32> = Vec::new();
 
-    let  _num1 = 0;
-    let  _num2 = 0;
+    let _num1 = 0;
+    let _num2 = 0;
 
     let _sum = 0;
 

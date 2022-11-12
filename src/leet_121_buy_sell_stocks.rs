@@ -15,8 +15,10 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
     //     }
     // }
     // max
-    if prices.len() < 2 { return 0;}
-    
+    if prices.len() < 2 {
+        return 0;
+    }
+
     // get first max by comparing delta between first two
     let mut max: i32 = 0.max(prices[1] - prices[0]);
 
@@ -30,7 +32,6 @@ pub fn max_profit(prices: Vec<i32>) -> i32 {
         //println!("debug: max: {max}, min{min}");
     });
     max
-
 }
 
 #[cfg(test)]
@@ -39,14 +40,14 @@ mod test {
 
     #[test]
     fn example1() {
-        let prices = vec![7,1,5,3,6,4];
-        
-        assert_eq!( max_profit(prices), 5);
+        let prices = vec![7, 1, 5, 3, 6, 4];
+
+        assert_eq!(max_profit(prices), 5);
     }
     #[test]
     fn example2() {
-        let prices = vec![7,6,4,3,1];
-        
-        assert_eq!( max_profit(prices), 0);
+        let prices = vec![7, 6, 4, 3, 1];
+
+        assert_eq!(max_profit(prices), 0);
     }
 }

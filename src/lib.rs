@@ -18,3 +18,6 @@ pub use leet_121_buy_sell_stocks::*;
 
 pub mod leet_125_valid_palindrome;
 pub use leet_125_valid_palindrome::*;
+
+pub mod leet_226_invert_binary_tree;
+pub use leet_226_invert_binary_tree::*;
