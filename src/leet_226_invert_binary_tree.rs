@@ -10,7 +10,6 @@ pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<Tre
 
 #[cfg(test)]
 mod test {
-    use super::*;
 
     #[test]
     fn example1() {}

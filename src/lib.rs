@@ -7,6 +7,12 @@ pub use leet_1_two_sum::*;
 pub mod leet_2_add_two_numbers;
 pub use leet_2_add_two_numbers::*;
 
+pub mod leet_9_palindrome_num;
+pub use leet_9_palindrome_num::*;
+
+pub mod leet_13_roman_to_int;
+pub use leet_13_roman_to_int::*;
+
 pub mod leet_20_valid_parentheses;
 pub use leet_20_valid_parentheses::*;
 
