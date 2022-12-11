@@ -1,7 +1,5 @@
 // Given an integer x, return true if x is a palindrome
-// and false otherwise.
-
-fn main() {}
+// and false otherwise. 
 
 pub fn is_palindrome(x: i32) -> bool {
     let s_rev: Vec<char> = x.to_string().chars().rev().collect();
