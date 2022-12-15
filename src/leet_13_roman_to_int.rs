@@ -21,59 +21,35 @@ Given a roman numeral, convert it to an integer.
 
  */
 
+use std::collections::HashMap;
+
 pub fn roman_to_int(s: String) -> i32 {
-    let mut total = 0;
+    let roman_lib: HashMap<char, i32> = HashMap::from([
+        ('I', 1),
+        ('V', 5),
+        ('X', 10),
+        ('L', 50),
+        ('C', 100),
+        ('D', 500),
+        ('M', 1000),
+    ]);
+    //variable to store sum
+    let mut total: i32 = 0;
 
-    let v: Vec<char> = s.chars().collect();
+    //store previous number
+    let mut previous_number: i32 = 0;
 
-    for (i, c) in s.char_indices() {
-        match c {
-            'I' => {
-                if i + 1 < v.len() {
-                    if v[i + 1] == 'V' {
-                        total += 4;
-                    } else if v[i + 1] == 'X' {
-                        total += 9;
-                    } else {
-                        total += 1;
-                    }
-                } else {
-                    total += 1;
-                }
+    for char in s.to_uppercase().chars().rev() {
+        if let Some(current_number) = roman_lib.get(&char) {
+            if *current_number < previous_number {
+                total -= current_number;
+            } else {
+                total += current_number;
             }
-            'V' => total += 5,
-            'X' => {
-                if i + 1 < v.len() {
-                    if Some(v[i + 1]).unwrap() == 'L' {
-                        total += 40;
-                    } else if Some(v[i + 1]).unwrap() == 'C' {
-                        total += 90;
-                    } else {
-                        total += 10;
-                    }
-                } else {
-                    total += 10;
-                }
-            }
-            'L' => total += 50,
-            'C' => {
-                if i + 1 < v.len() {
-                    if Some(v[i + 1]).unwrap() == 'D' {
-                        total += 400;
-                    } else if Some(v[i + 1]).unwrap() == 'M' {
-                        total += 900;
-                    } else {
-                        total += 100;
-                    }
-                } else {
-                    total += 100;
-                }
-            }
-            'D' => total += 500,
-            'M' => total += 1000,
-            _ => panic!("Somehow got here!"),
+            previous_number = *current_number;
+        } else {
+            panic!("unexpected char found: [{}]", char)
         }
-        println!("total: {total}");
     }
     total
 }
@@ -85,6 +61,7 @@ mod test {
     #[test]
     fn test_1() {
         assert_eq!(roman_to_int("III".to_string()), 3);
+        assert_eq!(roman_to_int("IV".to_string()), 4);
     }
     #[test]
     fn test_2() {

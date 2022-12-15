@@ -27,3 +27,8 @@ pub use leet_125_valid_palindrome::*;
 
 pub mod leet_226_invert_binary_tree;
 pub use leet_226_invert_binary_tree::*;
+
+pub mod leet_242_valid_anagram;
+pub use leet_242_valid_anagram::*;
+
+
