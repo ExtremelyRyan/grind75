@@ -28,6 +28,13 @@ pub use leet_26_remove_duplicates::*;
 pub mod leet_27_remove_element;
 pub use leet_27_remove_element::*;
 
+pub mod leet_58_len_of_last_word;
+pub use leet_58_len_of_last_word::*;
+
+pub mod leet_66_plus_one;
+pub use leet_66_plus_one::*;
+
+
 pub mod leet_121_buy_sell_stocks;
 pub use leet_121_buy_sell_stocks::*;
 
