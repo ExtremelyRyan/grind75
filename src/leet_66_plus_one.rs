@@ -2,34 +2,26 @@
 
 // You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. 
 // The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
-
 // Increment the large integer by one and return the resulting array of digits.
 
+// check each number in reverse order and add 1, modulo 10
+// check if mod 10 is 0
+//  if true -> return
+//  otherwise, continue the loop.
 pub fn plus_one(digits: Vec<i32>) -> Vec<i32> {
-    let result: Vec<i32> = Vec::new();    
+    
+    let mut nums = digits.clone();
 
-    let mut last = digits.get(digits.len() -1).unwrap().to_owned();
+    for n in nums.iter_mut().rev() {
+        *n = (*n + 1) % 10;
 
-    match last {
-        0..=8 => last += 1,
-        9 => {
-            last = 0;
-            *digits.get_mut(digits.len() - 2).unwrap() += 1;
-        }
-        _ => panic!(),
+        match *n % 10 != 0 {
+            true => { 
+                return nums;},
+            _ => continue,
+        } 
     }
-
-
-    let mut digits = digits;
-    for n in digits.iter_mut().rev() {
-        let sum = *n + 1;
-        *n = sum % 10;
-        if sum < 10 {
-            return digits;
-        }
-    }
-
-    [&vec![1], &digits[..]].concat()
+    [&vec![1], &nums[..]].concat()
 }
 
 
