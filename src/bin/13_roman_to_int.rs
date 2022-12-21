@@ -53,6 +53,7 @@ pub fn roman_to_int(s: String) -> i32 {
     }
     total
 }
+fn main() {}
 
 #[cfg(test)]
 mod test {

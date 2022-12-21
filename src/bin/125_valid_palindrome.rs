@@ -19,6 +19,8 @@ pub fn is_palindrome(s: String) -> bool {
     forward == backward
 }
 
+fn main() {}
+
 #[cfg(test)]
 mod test {
     use super::*;

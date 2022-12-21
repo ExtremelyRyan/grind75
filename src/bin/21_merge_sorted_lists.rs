@@ -1,4 +1,4 @@
-use crate::utils::ListNode;
+use grind75::utils::ListNode;
 
 pub fn merge_two_lists(
     list1: Option<Box<ListNode>>,
@@ -43,6 +43,8 @@ pub fn merge_two_lists(
 
     ListNode::from_vec(&vec_result)
 }
+
+fn main() {}
 
 #[cfg(test)]
 mod test {

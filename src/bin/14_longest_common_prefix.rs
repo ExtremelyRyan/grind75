@@ -22,6 +22,8 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
     "".to_string()
 }
 
+fn main() {}
+
 #[cfg(test)]
 mod tests {
     use super::*;

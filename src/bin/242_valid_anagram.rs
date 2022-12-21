@@ -28,6 +28,8 @@ fn string_to_hashmap(s: String) -> HashMap<char, i32> {
 //     map1.len() == map2.len() && map1.keys().all(|k| map2.contains_key(k))
 // }
 
+fn main() {}
+
 #[cfg(test)]
 mod test {
     use super::*;

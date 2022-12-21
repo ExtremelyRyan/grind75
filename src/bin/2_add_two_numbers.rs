@@ -1,4 +1,4 @@
-use crate::ListNode;
+use grind75::utils::ListNode;
 // NOT DONE
 /*
 You are given two non-empty linked lists representing two non-negative integers.
@@ -38,6 +38,8 @@ pub fn add_two_numbers(
 
     None
 }
+
+fn main() {}
 
 #[cfg(test)]
 mod test {

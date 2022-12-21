@@ -1,9 +1,9 @@
-use std::collections::btree_map::Iter;
-
 pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
     nums.dedup();
     nums.len() as i32
 }
+
+fn main() {}
 
 #[cfg(test)]
 mod tests {

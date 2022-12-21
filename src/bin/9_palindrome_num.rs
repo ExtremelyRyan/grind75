@@ -12,6 +12,8 @@ pub fn is_palindrome(x: i32) -> bool {
     true
 }
 
+fn main() {}
+
 #[cfg(test)]
 mod test {
     use super::*;

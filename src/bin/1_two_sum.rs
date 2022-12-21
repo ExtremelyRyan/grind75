@@ -22,12 +22,11 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 }
 
 pub fn two_sum2(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    
-    for (i , i_val) in nums.iter().enumerate() {
-        for j in i+1..nums.len()   {
+    for (i, i_val) in nums.iter().enumerate() {
+        for j in i + 1..nums.len() {
             if i_val + nums[j] == target {
-                return vec![i as i32,j as i32];
-            } 
+                return vec![i as i32, j as i32];
+            }
         }
     }
     vec![]
@@ -47,6 +46,8 @@ pub fn two_sum_hashmap(nums: Vec<i32>, target: i32) -> Vec<i32> {
 
     vec![]
 }
+
+fn main() {}
 
 #[cfg(test)]
 mod test {
