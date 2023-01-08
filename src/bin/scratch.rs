@@ -1,7 +1,7 @@
 use std::cell::{RefCell, RefMut};
 use std::collections::HashMap;
 use std::rc::Rc;
- 
+
 fn _refcell_example() {
     let shared_map: Rc<RefCell<_>> = Rc::new(RefCell::new(HashMap::new()));
     // Create a new block to limit the scope of the dynamic borrow
